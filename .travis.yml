@@ -4,13 +4,16 @@ sudo: false
 notifications:
   email: false
 rvm:
-- 2.5.3
+  - 2.7.1
+  - 2.6.5
 before_script:
-- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-- chmod +x ./cc-test-reporter
-- "./cc-test-reporter before-build"
+  - "curl -L
+    https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
+    > ./cc-test-reporter"
+  - chmod +x ./cc-test-reporter
+  - "./cc-test-reporter before-build"
 after_script:
-- "./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT"
+  - "./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT"
 env:
   global:
     secure: qCBAz4jTgijNxOpSbq4aC7FLzOPglh53waO5mBkIHX5CC54tsiXZmF3W4ER2lHlztXIDpA17qrduoPUnZR/VqYAWcyXfaNg3c2gdfGK8GLz+4jaeHJnHc5cKzHQC/7SFMeOo4u1++RFVh86mAG+tbfuWGmPo2T5OMCk0x4fG1mTkxNAdVBigIEE6/Oyus1zCL8bOeAtMjxI/bkE10M3hTLZhBj7R3OVVH6nJV8j1Kzg4QZJAREJnXQoRkXA+Serw4dVg1In86gJhrPMI57rgzOshMa7072QWzcV1kdKxD2L18mhZV5w5Ma9gC8DFqr1KZ566jMophnoI9ueilSzmauasXlEUGQZEmGTY9VPCS1/miRpR6lBunZsN/oQJafj0GtTjfq/Q/6om5+PyhO/2rM/LRh2iqj8O5VegrezUdaHXlB1RtLvTzWzmwSnz5bxbXXvd8+6aGrPdPLPOvhDHoZGa6/cAvo3HSmO1iLmjtxMQrtZfI/IF7sMgkr0jWa02X6BdPvLl28F6x2U1+9wQ4aED3OVKyw4QsdX9M2agzRVkuG8rtIFHfoULqyMyDmntt0QLFI2rwlSAnjm2DbkxUm+qtlsXReM2HWQjO6wQIaTx2m7ulwefT1DDQCc7Pxgk6UM/VI6UIOVIqFmr8X8cqaOi6NoMqXY/Kj753K9oonM=

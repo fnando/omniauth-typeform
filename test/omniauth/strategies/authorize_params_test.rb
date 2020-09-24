@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "test_helper"
 
 class AuthorizeParamsTest < Minitest::Test
@@ -13,14 +15,20 @@ class AuthorizeParamsTest < Minitest::Test
   end
 
   test "injects required scopes" do
-    strategy = OmniAuth::Strategies::Typeform.new(nil, "ID", "SECRET", scope: "team")
+    strategy =
+      OmniAuth::Strategies::Typeform.new(nil, "ID", "SECRET", scope: "team")
     strategy.stubs(:session).returns({})
 
     assert_equal "team accounts:read", strategy.authorize_params.scope
   end
 
   test "sets unique scopes" do
-    strategy = OmniAuth::Strategies::Typeform.new(nil, "ID", "SECRET", scope: "accounts:read")
+    strategy = OmniAuth::Strategies::Typeform.new(
+      nil,
+      "ID",
+      "SECRET",
+      scope: "accounts:read"
+    )
     strategy.stubs(:session).returns({})
 
     assert_equal "accounts:read", strategy.authorize_params.scope

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "./lib/omniauth-typeform/version"
 
 Gem::Specification.new do |spec|
@@ -9,6 +11,7 @@ Gem::Specification.new do |spec|
   spec.description   = spec.summary
   spec.homepage      = "https://github.com/fnando/omniauth-typeform"
   spec.license       = "MIT"
+  spec.required_ruby_version = Gem::Requirement.new(">= 2.5.0")
 
   spec.files         = `git ls-files -z`.split("\x0")
   spec.executables   = spec.files.grep(%r{^bin/}) {|f| File.basename(f) }
@@ -21,6 +24,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "mocha"
   spec.add_development_dependency "pry-meta"
   spec.add_development_dependency "rake"
+  spec.add_development_dependency "rubocop"
+  spec.add_development_dependency "rubocop-fnando"
   spec.add_development_dependency "simplecov"
   spec.add_development_dependency "webmock"
 end

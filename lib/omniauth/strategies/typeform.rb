@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 require "omniauth"
 require "omniauth-oauth2"
 
 module OmniAuth
   module Strategies
     class Typeform < OmniAuth::Strategies::OAuth2
-      ACCOUNT_SCOPE = "accounts:read".freeze
+      ACCOUNT_SCOPE = "accounts:read"
 
       option :client_options,
              site: "https://api.typeform.com",

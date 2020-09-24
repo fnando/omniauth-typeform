@@ -2,7 +2,6 @@
 
 [![Travis-CI](https://travis-ci.org/fnando/omniauth-typeform.svg)](https://travis-ci.org/fnando/omniauth-typeform)
 [![CodeClimate](https://codeclimate.com/github/fnando/omniauth-typeform.svg)](https://codeclimate.com/github/fnando/omniauth-typeform)
-[![Test Coverage](https://codeclimate.com/github/fnando/omniauth-typeform/badges/coverage.svg)](https://codeclimate.com/github/fnando/omniauth-typeform/coverage)
 [![Gem](https://img.shields.io/gem/v/omniauth-typeform.svg)](https://rubygems.org/gems/omniauth-typeform)
 [![Gem](https://img.shields.io/gem/dt/omniauth-typeform.svg)](https://rubygems.org/gems/omniauth-typeform)
 
@@ -24,13 +23,20 @@ Or install it yourself as:
 
 ## Usage
 
-`OmniAuth::Strategies::Typeform` is simply a Rack middleware. Read the OmniAuth docs for detailed instructions: <https://github.com/intridea/omniauth>.
+`OmniAuth::Strategies::Typeform` is simply a Rack middleware. Read the OmniAuth
+docs for detailed instructions: <https://github.com/intridea/omniauth>.
 
-First, create a new application at `https://admin.typeform.com/account#/section/apps`. Your callback URL must be something like `https://example.com/auth/typeform/callback`. For development you can use `http://127.0.0.1:3000/auth/typeform/callback`.
+First, create a new application at
+`https://admin.typeform.com/account#/section/apps`. Your callback URL must be
+something like `https://example.com/auth/typeform/callback`. For development you
+can use `http://127.0.0.1:3000/auth/typeform/callback`.
 
-Here's a quick example, adding the middleware to a Rails app in `config/initializers/omniauth.rb`. This example assumes you're exporting your credentials as environment variables.
+Here's a quick example, adding the middleware to a Rails app in
+`config/initializers/omniauth.rb`. This example assumes you're exporting your
+credentials as environment variables.
 
-Notice that omniauth-typeform will always inject `account` and `emails` scopes, so we can retrieve the required information.
+Notice that omniauth-typeform will always inject `account` and `emails` scopes,
+so we can retrieve the required information.
 
 ```ruby
 Rails.application.config.middleware.use OmniAuth::Builder do
